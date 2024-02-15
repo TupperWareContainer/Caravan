@@ -40,19 +40,21 @@ namespace CaravanEngine{
             if(_animator.IsEmpty()) sb.Draw(_sprite,transform.Position,Color.White); 
             else{
                 Rectangle rect = _animator.GetCurrentAnimation().GetCurrentFrame(); 
+                //sb.Draw(_sprite,transform.Position,Color.White);
+
                 sb.Draw(_sprite,transform.Position,rect,Color.White); 
             }
         }
 
         public void Update(GameTime gt){
             if(_animator.IsEmpty()) return; 
-
-            _animator.GetCurrentAnimation().Update(gt); 
+            _animator.Update(gt);
         }
 
         public Texture2D Sprite { get => _sprite; set => _sprite = value; }
         public Color Color { get => _color; set => _color = value; }
         public SpriteEffects SpriteEffects { get => _spriteEffects; set => _spriteEffects = value; }
         public float Layer { get => _layer; set => _layer = value; }
+        public Animator Animator { get => _animator; set => _animator = value; }
     }
 }

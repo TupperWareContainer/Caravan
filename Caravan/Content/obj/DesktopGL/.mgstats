@@ -1,3 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "/home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/Content/../fonts/Ubuntu_Mono/DebugFont.spritefont","/home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/Content/bin/DesktopGL/DebugFont.xnb","FontDescriptionProcessor","SpriteFontContent",2021,21535,0.342648
 "/home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/Content/../sprites/MissingTexture.png","/home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/Content/bin/DesktopGL/MissingTexture.xnb","TextureProcessor","Texture2DContent",143,4181,0.1755585
+"/home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/Content/../sprites/TestAnimation-Sheet.png","/home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/Content/bin/DesktopGL/TestAnimation-Sheet.xnb","TextureProcessor","Texture2DContent",239,16469,0.2598943

@@ -28,3 +28,4 @@
 /home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/bin/Debug/net6.0/Content/DiagnosticsFont.xnb
 /home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/bin/Debug/net6.0/Aether.Physics2D.Diagnostics.dll
 /home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/bin/Debug/net6.0/Content/DebugFont.xnb
+/home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/bin/Debug/net6.0/Content/TestAnimation-Sheet.xnb

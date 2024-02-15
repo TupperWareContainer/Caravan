@@ -36,6 +36,14 @@ namespace CaravanEngine{
             }
         }
 
+        public void Update(GameTime gt){
+            EntityNode current = _head; 
+            for(int i = 0; i < _size; i++){
+                current.E.Update(gt); 
+                current = current.Next; 
+            }
+        }
+
         public void Add(Entity entity){
             EntityNode node = new EntityNode(entity);
             if(_head == null){

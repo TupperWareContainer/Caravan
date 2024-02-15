@@ -19,6 +19,7 @@ namespace CaravanEngine{
             bool success = _animations.TryAdd<string,Animation>(tag,animation); 
             if(!success) CaravanDebug.LogMessage("WARNING::ANIMATOR::COULD NOT ADD ANIMATION");
             if(_default == null) _default = animation; 
+            if(_current == null) _current = animation;
         }
 
         public void SetDefaultAnimation(string tag){
@@ -46,6 +47,14 @@ namespace CaravanEngine{
                 return false; 
             }
 
+        }
+
+        public void Update(GameTime gt){
+            if(_current.IsFinished()){
+                _current.ResetAnimation();
+                _current = _default;
+            }
+            _current.Update(gt);
         }
 
         public Animation GetCurrentAnimation(){

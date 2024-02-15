@@ -39,6 +39,11 @@ public class CaravanMain : Game
 
         _player.SpriteComponent.Sprite = Content.Load<Texture2D>("MissingTexture"); 
 
+        Entity e = _entityHandler.Create(new Vector2(200,200),"Test Entity", Content.Load<Texture2D>("TestAnimation-Sheet"));
+
+        e.SpriteComponent.Animator.AddAnimation(new Animation(e.SpriteComponent.Sprite,32,32,1f,true),"default"); 
+
+
         // TODO: use this.Content to load your game content here
     }
 
@@ -69,6 +74,7 @@ public class CaravanMain : Game
         base.Update(gameTime);
         _prevMouseState = Mouse.GetState(); 
         _prevKeyboardState = Keyboard.GetState(); 
+        _entityHandler.Update(gameTime);
     }
 
     protected override void Draw(GameTime gameTime)

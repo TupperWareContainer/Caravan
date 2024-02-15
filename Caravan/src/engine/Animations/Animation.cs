@@ -30,6 +30,7 @@ namespace CaravanEngine{
             _finished = false;
             int numRectangles = spriteSheet.Width / frameWidth; 
 
+
             _spriteSheet = spriteSheet;
 
             _duration = duration; 
@@ -37,10 +38,13 @@ namespace CaravanEngine{
 
             _fps = _duration / numRectangles;
 
-            _frames = new Rectangle[numRectangles]; 
+            CaravanDebug.LogMessage($"Creating animation from sprite sheet {spriteSheet.Name}\nFrame count = {numRectangles}\nFPS: {_fps}");
 
-            for(int i = 1; i <= numRectangles; i++){
-                _frames[i-1] = new Rectangle((frameWidth * i) - spriteSheet.Width,frameHeight,frameWidth,frameHeight);
+
+            _frames = new Rectangle[numRectangles]; 
+            //_frames[0] = new Rectangle(0,0,frameWidth,frameHeight);
+            for(int i = 0; i < numRectangles; i++){
+                _frames[i] = new Rectangle(frameWidth * i,0,frameWidth,frameHeight);
             }
             _cFrameIndex = 0; 
             _cFrame = _frames[0]; 
@@ -49,13 +53,18 @@ namespace CaravanEngine{
         public void Update(GameTime gameTime){
             if(_finished) return;
             if(_timer >= _duration && !_repeating) _finished = true; 
-            else if(_timer >= _duration) _timer = 0;
+            else if(_timer >= _duration){
+                ResetAnimation();
+                CaravanDebug.LogMessage("Resetting animation frame");
+            } 
 
             if(_timer % _fps == 0 && _cFrameIndex + 1 <_frames.Length){
                 _cFrameIndex++;
                 _cFrame = _frames[_cFrameIndex]; 
+                CaravanDebug.LogMessage("Changing animation frame");
             }
             _timer += (float)gameTime.ElapsedGameTime.TotalSeconds; 
+
 
         }
         public Rectangle GetCurrentFrame(){
@@ -64,7 +73,8 @@ namespace CaravanEngine{
 
         public void ResetAnimation(){
             _timer = 0; 
-            _cFrame = _frames[0]; 
+            _cFrame = _frames[0];
+            _cFrameIndex = 0; 
             _finished = false;
         }
 

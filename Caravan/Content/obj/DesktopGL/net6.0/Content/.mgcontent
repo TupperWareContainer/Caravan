@@ -6,9 +6,11 @@
   <SourceFiles>
     <File>/home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/Content/../fonts/Ubuntu_Mono/DebugFont.spritefont</File>
     <File>/home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/Content/../sprites/MissingTexture.png</File>
+    <File>/home/buddy/Desktop/Code Projects/MonoGame/Caravan/Caravan/Content/../sprites/TestAnimation-Sheet.png</File>
   </SourceFiles>
   <DestFiles>
     <File>DebugFont.spritefont</File>
     <File>MissingTexture.png</File>
+    <File>TestAnimation-Sheet.png</File>
   </DestFiles>
 </SourceFileCollection>
