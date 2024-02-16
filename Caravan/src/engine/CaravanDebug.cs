@@ -39,7 +39,21 @@ namespace CaravanEngine{
                 _stack = new Stack<string>();
             }
 
-            string pushed = $"T = ({getTimestampAsString()})| {message}\n"; 
+            string pushed = $"T = ({getTimestampAsString()})| {message}\n";
+            _stack.Push(pushed); 
+            Console.WriteLine(pushed); 
+        }
+
+        public static void LogMessage(string message, bool printStackTrace){
+            if(_stack == null){
+                _stack = new Stack<string>();
+            }
+
+            string pushed = $"T = ({getTimestampAsString()})| {message}";
+            string ending = Environment.StackTrace;
+
+            if(printStackTrace) pushed += "\n" + ending + "\n";
+            else pushed += "\n";
             _stack.Push(pushed); 
             Console.WriteLine(pushed); 
         }
