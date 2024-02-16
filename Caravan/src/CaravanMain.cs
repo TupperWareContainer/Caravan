@@ -1,4 +1,7 @@
 ﻿using CaravanEngine;
+using CaravanEngine.Entities;
+using CaravanEngine.Animation;
+using CaravanEngine.UI; 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;

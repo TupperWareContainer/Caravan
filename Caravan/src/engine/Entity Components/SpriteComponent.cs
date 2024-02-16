@@ -1,7 +1,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using CaravanEngine.Animation; 
 
-namespace CaravanEngine{
+namespace CaravanEngine.Entities{
     public class SpriteComponent : EntityComponent{
         private Texture2D _sprite; 
         private Color _color;

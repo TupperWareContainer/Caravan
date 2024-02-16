@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CaravanEngine{
+namespace CaravanEngine.Entities{
     public abstract class EntityComponent{
 
         public virtual void InvokeComponent(Entity e, GameTime gameTime) {} 

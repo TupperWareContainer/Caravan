@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using nkast.Aether.Physics2D.Dynamics;
-namespace CaravanEngine{
+
+namespace CaravanEngine.Entities{
     public class Entity{
         private Transform _transform; 
 

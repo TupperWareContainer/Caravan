@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-namespace CaravanEngine{
+namespace CaravanEngine.Animation{
     public class Animator{
        
         private Dictionary<string,Animation> _animations;

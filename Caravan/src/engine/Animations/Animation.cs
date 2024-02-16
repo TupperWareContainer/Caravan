@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-namespace CaravanEngine{
+namespace CaravanEngine.Animation{
     /// <summary>
     /// Animation.cs
     /// Animations are created from spritesheets, with each frame being generated horizontally
@@ -64,7 +64,7 @@ namespace CaravanEngine{
                 _cFrameIndex++;
                 _cFrame = _frames[_cFrameIndex]; 
                 _timeSinceLastFrame = 0f;
-                CaravanDebug.LogMessage("Changing animation frame");
+                //CaravanDebug.LogMessage("Changing animation frame");
             }
 
             //CaravanDebug.LogMessage($"Timer: {_timer}");
@@ -83,7 +83,7 @@ namespace CaravanEngine{
             _cFrameIndex = 0; 
             _finished = false;
             _timeSinceLastFrame = 0f;
-            CaravanDebug.LogMessage("Resetting animation frame");
+            //CaravanDebug.LogMessage("Resetting animation frame");
         }
 
         public bool IsFinished(){

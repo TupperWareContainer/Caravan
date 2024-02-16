@@ -2,7 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CaravanEngine{
+namespace CaravanEngine.Entities{
     public class EntityHandler{
         class EntityNode{
             public Entity E;
