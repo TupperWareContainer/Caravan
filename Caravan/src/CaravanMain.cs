@@ -15,6 +15,8 @@ public class CaravanMain : Game
     private SpriteBatch _spriteBatch;
     private EntityHandler _entityHandler;
 
+    private UIHandler _uiHandler; 
+
     private Player _player; 
 
     private MouseState _prevMouseState;
@@ -33,18 +35,38 @@ public class CaravanMain : Game
         _player = new Player(new Vector2(200,400));   
         _entityHandler = new EntityHandler();  
 
+        _uiHandler = new UIHandler();
         base.Initialize();
     }
 
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
+        Assets.LoadAssets(Content); 
 
-        _player.SpriteComponent.Sprite = Content.Load<Texture2D>("MissingTexture"); 
+
+        _player.SpriteComponent.Sprite = Assets.Default.Texture;
 
         Entity e = _entityHandler.Create(new Vector2(200,200),"Test Entity", Content.Load<Texture2D>("TestAnimation-Sheet"));
 
         e.SpriteComponent.Animator.AddAnimation(new Animation(e.SpriteComponent.Sprite,32,32,1f,true),"default"); 
+
+        Canvas canvas = new Canvas("Test Canvas",0); 
+
+
+        UIImage image = new UIImage(new Vector2(0f,0f),new Vector2(32,32),Content.Load<Texture2D>("TestAnimation-Sheet"),canvas,0);
+
+        UIText text = new UIText(new Transform(new Vector2(0f, 0f), new Vector2(1f, 1f), 0f), canvas, 0);
+
+
+        text.Text = "This is a test of the new UI Text object, I hope it works!";
+        text.DrawBoundingRectangle = true; 
+        canvas.AddObject(image); 
+
+        canvas.AddObject(text);
+
+        _uiHandler.AddCanvas(canvas); 
+
 
 
         // TODO: use this.Content to load your game content here
@@ -78,6 +100,8 @@ public class CaravanMain : Game
         _prevMouseState = Mouse.GetState(); 
         _prevKeyboardState = Keyboard.GetState(); 
         _entityHandler.Update(gameTime);
+
+        _uiHandler.Update(gameTime); 
     }
 
     protected override void Draw(GameTime gameTime)
@@ -89,7 +113,10 @@ public class CaravanMain : Game
         _player.Draw(_spriteBatch); 
         _entityHandler.Draw(_spriteBatch);
 
+        _uiHandler.DrawCanvases(_spriteBatch);
+
         _spriteBatch.End();
+
 
         base.Draw(gameTime);
     }

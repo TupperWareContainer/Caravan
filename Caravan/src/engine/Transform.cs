@@ -11,6 +11,11 @@ namespace CaravanEngine{
             Scale = new Vector2(1f,1f); 
             Rotation = 0f;
         }
+        public Transform(Vector2 position, Vector2 scale, float rotation){
+            Position = position; 
+            Scale = scale; 
+            Rotation = rotation;
+        }
     }
 
 
