@@ -11,7 +11,6 @@ namespace CaravanEngine.UI{
         private Color _color; 
         
         private Rectangle _bounds; 
-
         private bool _overflowText; 
         private bool _drawBoundingRectangle;
         
@@ -97,11 +96,10 @@ namespace CaravanEngine.UI{
             get => _text; 
             set{
                 _text = value;
-                ResizeTextBoxBasedOnText(_text);
                 _text = WrapString(_spriteFont,_text,_bounds,_overflowText);
             } 
         }
-        private void ResizeTextBoxBasedOnText(string text){
+        public void ResizeTextBoxBasedOnText(string text){
             Vector2 bounds = _spriteFont.MeasureString(text); 
             _bounds.Width = (int)MathF.Ceiling(bounds.X); 
             _bounds.Height = (int)MathF.Ceiling(bounds.Y);
@@ -119,6 +117,7 @@ namespace CaravanEngine.UI{
         public bool OverflowText { get => _overflowText; set => _overflowText = value; }
         public Rectangle Bounds { get => _bounds; set => _bounds = value; }
         public bool DrawBoundingRectangle { get => _drawBoundingRectangle; set => _drawBoundingRectangle = value; }
+       
     }
 
 }

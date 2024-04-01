@@ -1,0 +1,57 @@
+<!--
+Order of Information:
+    1. Player spawn point
+    2. Tilemap Information
+    3. Entity Information
+    4. Level Geometry
+-->
+
+<level>
+    <player>
+        <pspx>0</pspx>
+        <pspy>0</pspy>
+    </player>
+
+    <tilemap>
+        <id>01</id> <!--The number id of the tilemap-->
+        <file>texture</file> <!--the filename of the tilemap texture--> 
+        <dimX>32</dimX> <!--the x dimension of the tiles-->
+        <dimY>32</dimY> <!--the y dimension of the tiles-->
+        <tiles> <!--tiles are stored from left to right as per the specified dimensions-->
+            <t>
+                <xoff>0</xoff> <!--The x offset of the tile texture-->
+                <yoff>0</yoff> <!--The y offset of the tile texture-->
+            </t>
+            {...}
+        </tiles>
+
+    </tilemap>
+
+    <entity>
+        <!--Entity info goes here-->
+    </entity>
+
+    <geometry>
+        <layer> 
+            <num>0</num>
+            <tiles>
+                <t>
+                    <tmap>01</tmap> <!--The tilemap id used-->
+                    <tnum>0</tnum>  <!--The index number of the tile within the tilemap-->
+                    <posX>0</posX>  <!--The x position of the tile (in factors of the width of the tile, actual position = posX * dimX)-->
+                    <posY>0</posY>  <!--The y position of the tile (in factors of the height of the tile, actual position = posY * dimY)-->
+                </t>
+                {...}
+            </tiles>
+            <col>
+                <!--Layer 0 will never have colliders but this is just for example
+                    the collider section is a list of points that make up a polygon collider
+                    there might be multiple colliders in a tilemap -->
+                <pt>0,0</pt>
+                {...}    
+            </col>
+        </layer>
+        {...}
+    </geometry>
+</level>
+<!--End level-->

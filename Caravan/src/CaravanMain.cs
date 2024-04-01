@@ -31,8 +31,7 @@ public class CaravanMain : Game
     protected override void Initialize()
     {
         // TODO: Add your initialization logic here
-        Physics.WorldInstance = new World();      
-        _player = new Player(new Vector2(200,400));   
+        _player = Player.CreatePlayerInstance(new Vector2(300,300));
         _entityHandler = new EntityHandler();  
 
         _uiHandler = new UIHandler();
@@ -61,6 +60,7 @@ public class CaravanMain : Game
 
         text.Text = "This is a test of the new UI Text object, I hope it works!";
         text.DrawBoundingRectangle = true; 
+        text.ResizeTextBoxBasedOnText(text.Text);
         canvas.AddObject(image); 
 
         canvas.AddObject(text);

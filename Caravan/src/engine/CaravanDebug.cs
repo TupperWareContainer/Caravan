@@ -1,11 +1,25 @@
 using System;
 using System.Collections.Generic;
-
+using CaravanEngine.UI; 
+using Microsoft.Xna.Framework;
 namespace CaravanEngine{
     public static class CaravanDebug{
         private static Stack<string> _stack; 
 
         public static float Timestamp {get; set;}
+
+        public static bool DisplayMessages {get; set;}
+
+        public static int  MaxDisplayMessages {get; set;}
+
+        // private static Canvas _debugCanvas; 
+        // private static UIText _debugOutput; 
+
+        // public static void Init(){
+
+        //     _debugCanvas = new Canvas("Debug Canvas", 10); 
+        //     _debugOutput = new UIText(new Transform(new Vector2(0f,0f),new Vector2(1f, 1f),0f),_debugCanvas,1); 
+        // }
 
 
         public static string getTimestampAsString(){

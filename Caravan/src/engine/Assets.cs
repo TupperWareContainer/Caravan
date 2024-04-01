@@ -13,8 +13,6 @@ namespace CaravanEngine{
             Default.Texture = contentManager.Load<Texture2D>("MissingTexture"); 
         }
 
-
-
-
     }
+    
 }
